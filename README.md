@@ -9,6 +9,8 @@
 
 ~~4. 在 build.gradle.kts 中引入本地、阿里镜像服务~~
 
+~~5. 在 SonarCloud.io 中采用 GitHub Action 方式进行质量检查~~
+
 
 ## 特别参考：
 [手把手教你从零设计一个日志框架](https://segmentfault.com/a/1190000038760707)
