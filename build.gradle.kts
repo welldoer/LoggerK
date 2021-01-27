@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.4.21"
     id("org.sonarqube") version "3.0"
+    jacoco
 }
 
 sonarqube {
@@ -39,8 +40,15 @@ dependencies {
     testImplementation("io.mockk:mockk:1.10.5")
 }
 
+tasks.jacocoTestReport {
+    reports {
+        xml.isEnabled = true
+    }
+}
+
 tasks.test {
     useJUnitPlatform()
+    finalizedBy(tasks.jacocoTestReport)
 }
 
 tasks.withType<KotlinCompile>() {
