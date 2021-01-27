@@ -23,6 +23,10 @@ class LoggingEventTest {
             "LoggingEvent\\(timestamp=.*, level=.*, message=.*, threadName=.*, threadId=[0-9]*, loggerName=.*\\)".toRegex()
                 .matches(LoggingEvent(timestampL, Level.INFO, message, loggerName).toString())
         )
+        assertTrue(
+            "LoggingEvent\\(timestamp=.*, level=.*, message=.*, threadName=.*, threadId=[0-9]*, loggerName=.*\\)".toRegex()
+                .matches(LoggingEvent(Level.INFO, message, loggerName).toString())
+        )
 //        assertEquals(
 //            "LoggingEvent(timestamp=Tue Jan 26 14:31:08 CST 2021, level=INFO, message=output message, threadName=, threadId=0, loggerName=abc)",
 //            LoggingEvent(timestampL, Level.INFO, message, loggerName).toString()
