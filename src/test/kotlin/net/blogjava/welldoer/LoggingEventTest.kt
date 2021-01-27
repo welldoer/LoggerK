@@ -20,12 +20,12 @@ class LoggingEventTest {
         val loggerName = "abc"
 
         assertTrue(
-            "LoggingEvent\\(timestamp=.*, level=[0-9]*, message=.*, threadName=.*, threadId=[0-9]*, loggerName=.*\\)".toRegex()
-                .matches(LoggingEvent(timestampL, 0, message, loggerName).toString())
+            "LoggingEvent\\(timestamp=.*, level=.*, message=.*, threadName=.*, threadId=[0-9]*, loggerName=.*\\)".toRegex()
+                .matches(LoggingEvent(timestampL, Level.INFO, message, loggerName).toString())
         )
 //        assertEquals(
-//            "LoggingEvent(timestamp=Tue Jan 26 14:31:08 CST 2021, level=0, message=output message, threadName=, threadId=0, loggerName=abc)",
-//            LoggingEvent(timestampL, 0, message, loggerName).toString()
+//            "LoggingEvent(timestamp=Tue Jan 26 14:31:08 CST 2021, level=INFO, message=output message, threadName=, threadId=0, loggerName=abc)",
+//            LoggingEvent(timestampL, Level.INFO, message, loggerName).toString()
 //        )
     }
 
